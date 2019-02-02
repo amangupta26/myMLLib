@@ -1,4 +1,4 @@
-from src.custom_transformers.CustomPipelineTransformer import CustomPipelineTransformer
+from ..custom_transformers.CustomPipelineTransformer import CustomPipelineTransformer
 from ..pipeline import PipelineCreator
 from sklearn.preprocessing import LabelEncoder
 
