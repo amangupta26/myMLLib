@@ -1,4 +1,4 @@
-from pipeline import PipelineCreator
+from ..pipeline import PipelineCreator
 from .CustomPipelineTransformer import CustomPipelineTransformer
 import pandas as pd
 

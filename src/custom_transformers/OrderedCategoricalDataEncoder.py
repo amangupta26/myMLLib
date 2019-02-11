@@ -1,5 +1,5 @@
 from .CustomPipelineTransformer import CustomPipelineTransformer
-from pipeline import PipelineCreator
+from ..pipeline import PipelineCreator
 from sklearn.preprocessing import LabelEncoder
 
 import pandas as pd
