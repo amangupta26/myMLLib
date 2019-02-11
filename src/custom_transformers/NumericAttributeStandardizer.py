@@ -1,5 +1,5 @@
 from pipeline import PipelineCreator
-from custom_transformers.CustomPipelineTransformer import CustomPipelineTransformer
+from .CustomPipelineTransformer import CustomPipelineTransformer
 import pandas as pd
 
 
