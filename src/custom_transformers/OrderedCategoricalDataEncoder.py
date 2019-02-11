@@ -1,5 +1,5 @@
-from ..custom_transformers.CustomPipelineTransformer import CustomPipelineTransformer
-from ..pipeline import PipelineCreator
+from custom_transformers.CustomPipelineTransformer import CustomPipelineTransformer
+from pipeline import PipelineCreator
 from sklearn.preprocessing import LabelEncoder
 
 import pandas as pd
@@ -21,7 +21,8 @@ class OrderedCategoricalDataEncoder(CustomPipelineTransformer):
         if isinstance(data_frame, pd.DataFrame):
             res_data_frame = pd.DataFrame()
             for column in data_frame:
-                temp_data_frame = data_frame[[column]]
+                temp_data_frame = data_frame[column]
+                print(temp_data_frame.values)
                 temp_data_frame = pd.DataFrame(self.pipeline.fit_transform(temp_data_frame.values.ravel()))
                 res_data_frame = pd.concat([res_data_frame, temp_data_frame], axis=1)
             return res_data_frame
