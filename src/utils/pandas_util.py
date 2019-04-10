@@ -29,6 +29,24 @@ def filter_data_frame_by_columns(data_frame, label_columns):
     return data_frame[label_columns]
 
 
+def get_nan_columns_map(data_frame):
+    nan_column_map = {}
+    temp_series = data_frame.isnull().sum()
+    for column_name, nan_count in temp_series.items():
+        if nan_count > 0:
+            nan_column_map[column_name] = nan_count
+    return nan_column_map
+
+
+# Returns rows which are NaN in data frame
+def get_nan_rows(data_frame):
+    return data_frame[data_frame.isnull().T.any().T]
+
+
+def get_data_frame_column_names_by_list(data_frame):
+    return list(data_frame.columns)
+
+
 
 
 
