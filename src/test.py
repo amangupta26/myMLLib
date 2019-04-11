@@ -1,6 +1,6 @@
 from utils import pandas_util, encode_data_util
 from pipeline import PipelineCreator
-from custom_transformers import  OrderedCategoricalDataEncoder, OneHotEncoder
+from custom_transformers import  OrderedCategoricalDataEncoder, OneHotEncoder, NumericAttributeStandardizer
 # import numpy as np
 import pandas as pd
 
@@ -101,9 +101,9 @@ no_op_columns = ["OverallQual", "OverallCond"]
 delete_columns = ["TotalBsmtSF"]
 
 # df_integer_encoded = OrderedCategoricalDataEncoder.OrderedCategoricalDataEncoder().transform(df[int_encoding_columns])
-df_one_hot_encoded = OneHotEncoder.OneHotEncoder().transform(df[one_hot_encoding_columns])
-
-print(df_one_hot_encoded.columns)
+# df_one_hot_encoded = OneHotEncoder.OneHotEncoder().transform(df[one_hot_encoding_columns])
+df_standardized = NumericAttributeStandardizer.NumericAttributeStandardizer().transform(df[standardize_columns])
+print(df_standardized.columns)
 
 
 
